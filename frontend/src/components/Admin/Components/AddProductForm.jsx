@@ -12,7 +12,7 @@ const AddProductForm = () => {
     name: '',
     description: '',
     price: '',
-    category: 'мотоциклы',
+    category: 'питбайки',
   });
   
   const [imageFile, setImageFile] = useState(null);
