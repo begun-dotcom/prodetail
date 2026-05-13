@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+body {
+  background-color: #18202a;
+  background-image: linear-gradient(
+    180deg,
+    rgba(24, 32, 42, 0.3) 0%,
+    transparent 50%,
+    rgba(24, 32, 42, 0.3) 100%
+  );
+}
+
