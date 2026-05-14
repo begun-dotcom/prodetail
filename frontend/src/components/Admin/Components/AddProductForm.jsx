@@ -78,7 +78,7 @@ const AddProductForm = () => {
 
       if (response.status === 200 || response.status === 201) {
         alert('✅ Товар успешно добавлен!');
-        setFormData({ name: '', description: '', price: '', category: 'питбайк' });
+        setFormData({ name: '', description: '', price: '', category: 'питбайки' });
         removeImage();
         queryClient.invalidateQueries(['categoryName']);
       } else {
