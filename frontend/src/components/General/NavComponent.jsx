@@ -15,8 +15,10 @@ function NavComponent() {
     setIsOpen(false);
   };
   console.log(isOpen)
+
+  /* bg-gray-900/80 */
   return (
-    <nav className='fixed h-12 w-full top-0 z-50 border-b border-white/10 shadow-sm md:h-16 md:bg-gray-900/80 md:backdrop-blur-md'>
+    <nav className='fixed h-12 w-full top-0 z-50 border-b border-white/10 shadow-sm md:h-16 md:bg-amber-500 md:backdrop-blur-md'>
   <Container className='flex justify-center items-center px-2 py-2'>
     <div className="w-full h-full flex justify-between items-center px-4">
       {/* Логотип — с белым фильтром чтобы был виден */}
