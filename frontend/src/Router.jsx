@@ -7,6 +7,7 @@ import Admin from './components/Admin/Admin'
 import ProtectedRoute from './components/Login/ProtectedRoute'
 import Login from './components/Login/Login'
 import AboutPage from './components/About/AboutPage'
+import NotFound from './components/NotFound/NotFound';
 
 
 
@@ -39,6 +40,7 @@ function AppRoutes() {
           <Admin/>
         </ProtectedRoute>
       } />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }
