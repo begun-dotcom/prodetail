@@ -12,9 +12,17 @@ function MainCategory({category}) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15;
 
-  const openImageModal = (imageUrl, productName) => {
+  /* const openImageModal = (imageUrl, productName) => {
       setSelectedImage({ url: imageUrl, name: productName });
-  };
+  }; */
+  const openImageModal = (imageUrl, productName, description, price) => {
+  setSelectedImage({ 
+    url: imageUrl, 
+    name: productName, 
+    description: description,
+    price: price 
+  });
+};
 
   const closeImageModal = () => {
       setSelectedImage(null);
@@ -163,8 +171,9 @@ const goToPage = (page) => {
               >
                 <div 
                   className="relative overflow-hidden bg-gray-800/50 aspect-4/3 cursor-zoom-in"
-                  onClick={() => openImageModal(product.image_url, product.name)}
+                  onClick={() => openImageModal(product.image_url, product.name, product.description, product.price)}
                 >
+                  {/* onClick={() => openImageModal(product.image_url, product.name)} */}
                   <img 
                     className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110' 
                     src={product.image_url && product.image_url !== '' ? product.image_url : '/notfound.jpg'} 
@@ -189,7 +198,7 @@ const goToPage = (page) => {
                     {product.name}
                   </h3>
                   
-                  <p className="text-xs md:text-sm text-gray-400 mt-1.5 line-clamp-2 h-9">
+                  <p className="text-xs md:text-sm text-gray-400 mt-1.5 line-clamp-2 h-10">
                     {product.description}
                   </p>
                   
@@ -281,6 +290,47 @@ const goToPage = (page) => {
 
       {/* Модалка просмотра изображения */}
       {selectedImage && (
+          <div 
+            className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
+            onClick={closeImageModal}
+          >
+            <div 
+              className="relative max-w-5xl w-full max-h-[90vh] animate-scaleIn"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={closeImageModal}
+                className="absolute -top-14 right-0 text-white/60 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full z-10"
+              >
+                <X className="w-8 h-8" />
+              </button>
+              
+              <div className='bg-white/5 border border-white/10 rounded-2xl overflow-hidden'>
+                <img 
+                  src={selectedImage.url} 
+                  alt={selectedImage.name}
+                  className="w-full h-full object-contain max-h-[60vh]"
+                />
+                <div className='p-6 border-t border-white/10'>
+                  <p className="text-white text-xl font-bold mb-2">
+                    {selectedImage.name}
+                  </p>
+                  {selectedImage.description && (
+                    <p className="text-gray-300 text-base leading-relaxed">
+                      {selectedImage.description}
+                    </p>
+                  )}
+                  {selectedImage.price > 0 && (
+                    <p className="text-amber-500 text-2xl font-bold mt-3">
+                      {Number(selectedImage.price).toLocaleString()} ₽
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      {/* {selectedImage && (
         <div 
           className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
           onClick={closeImageModal}
@@ -310,7 +360,7 @@ const goToPage = (page) => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   )
 }
