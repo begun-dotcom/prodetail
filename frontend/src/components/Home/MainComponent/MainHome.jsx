@@ -27,7 +27,7 @@ function MainHome() {
     <Link to="/category/Питбайки" className='relative group overflow-hidden rounded-2xl border border-white/5 hover:border-amber-500/20 transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/5 cursor-pointer'>
       <img 
         className='w-full h-48 md:h-56 lg:h-70 object-cover transition-transform duration-700 group-hover:scale-105' 
-        src='/mot.webp' 
+        src='/mot.jpg' 
         alt='Питбайки'
       />
       <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent' />
@@ -42,7 +42,7 @@ function MainHome() {
     <Link to="/category/Электровелосипеды" className='relative group overflow-hidden rounded-2xl border border-white/5 hover:border-amber-500/20 transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/5 cursor-pointer'>
       <img 
         className='w-full h-48 md:h-56 lg:h-70 object-cover transition-transform duration-700 group-hover:scale-105' 
-        src='/mot2.webp' 
+        src='/mot2.jpg' 
         alt='Электровелосипеды'
       />
       <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent' />

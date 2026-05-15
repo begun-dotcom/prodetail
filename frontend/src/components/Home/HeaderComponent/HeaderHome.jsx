@@ -13,10 +13,15 @@ function HeaderHome() {
   <Container className='relative z-10 px-0.5 pt-1 pb-4 md:pt-1 md:pb-6'>
     <div className='relative w-full rounded-2xl overflow-hidden border border-white/5 shadow-2xl shadow-black/20'>
       <img 
-        className='w-full h-auto min-h-100 md:min-h-125 lg:min-h-150 object-cover' 
-        src='/screen.webp' 
-        alt='screen'
-      />
+          className='w-full h-auto object-cover' 
+          src='/screen.jpg' 
+          alt='screen'
+          width="2400"
+          height="1800"
+          loading="eager"
+          fetchpriority="high"
+          style={{ aspectRatio: '2400/1800', minHeight: '400px' }}
+        />
       
       {/* Затемнение сверху */}
       <div className='absolute inset-0 bg-linear-to-b from-[#18202a]/30 via-transparent to-[#18202a]/30 z-10'></div>
