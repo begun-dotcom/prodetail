@@ -295,41 +295,50 @@ const goToPage = (page) => {
             onClick={closeImageModal}
           >
             <div 
-              className="relative max-w-5xl w-full max-h-[90vh] animate-scaleIn"
+              className="relative max-w-4xl w-full animate-scaleIn"
               onClick={(e) => e.stopPropagation()}
             >
-              <button
-                onClick={closeImageModal}
-                className="absolute -top-14 right-0 text-white/60 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full z-10"
-              >
-                <X className="w-8 h-8" />
-              </button>
-              
-              <div className='bg-white/5 border border-white/10 rounded-2xl overflow-hidden'>
-                <img 
-                  src={selectedImage.url} 
-                  alt={selectedImage.name}
-                  className="w-full h-full object-contain max-h-[60vh]"
-                />
-                <div className='p-6 border-t border-white/10'>
+              <div className='bg-white/5 border border-white/10 rounded-2xl overflow-hidden flex flex-col max-h-[90vh]'>
+                {/* Фото */}
+                <div className='relative flex-shrink-0'>
+                  <button
+                    onClick={closeImageModal}
+                    className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full z-10 bg-black/30"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                  <img 
+                    src={selectedImage.url} 
+                    alt={selectedImage.name}
+                    className="w-full h-64 md:h-96 object-contain bg-black/50"
+                  />
+                </div>
+                
+                {/* Контент — скроллится */}
+                <div className='p-6 overflow-y-auto flex-1'>
                   <p className="text-white text-xl font-bold mb-2">
                     {selectedImage.name}
                   </p>
-                  {selectedImage.description && (
-                    <p className="text-gray-300 text-base leading-relaxed">
-                      {selectedImage.description}
-                    </p>
-                  )}
+                  
                   {selectedImage.price > 0 && (
-                    <p className="text-amber-500 text-2xl font-bold mt-3">
+                    <p className="text-amber-500 text-2xl font-bold mb-4">
                       {Number(selectedImage.price).toLocaleString()} ₽
                     </p>
+                  )}
+                  
+                  {selectedImage.description && (
+                    <div>
+                      <h3 className="text-white/60 text-sm uppercase mb-2">Описание</h3>
+                      <p className="text-gray-300 text-base leading-relaxed whitespace-pre-wrap break-words">
+                        {selectedImage.description}
+                      </p>
+                    </div>
                   )}
                 </div>
               </div>
             </div>
           </div>
-        )}
+)}
       {/* {selectedImage && (
         <div 
           className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
