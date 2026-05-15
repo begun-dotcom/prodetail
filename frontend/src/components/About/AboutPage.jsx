@@ -17,7 +17,7 @@ function AboutPage() {
             </h1>
             <p className='text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed'>
               Ваш надёжный партнёр в мире автозапчастей. Мы помогаем найти идеальные детали 
-              для вашего автомобиля с 2010 года.
+              для вашего автомобиля.
             </p>
           </div>
         </Container>

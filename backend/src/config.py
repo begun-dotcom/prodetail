@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     S3_REGION: str
     storage_class: str = "STANDARD"  # Стандартный
     ALLOWED_ORIGINS: str
+    # LOCAL_db: str = "sqlite+aiosqlite:///./db.sqlite3"
 
     @property
     def cors_origins(self) -> list[str]:

@@ -5,7 +5,7 @@ import EditProductModal from './EditProductModal'
 
 
 function GetProduct() {
-  const [activeTab, setActiveTab] = useState('Мотоциклы');
+  const [activeTab, setActiveTab] = useState('Питбайки');
   const [error, setError] = useState('');
   const queryClient = useQueryClient();
   const [editingProduct, setEditingProduct] = useState(null);

@@ -8,7 +8,7 @@ from src.config import setting
 from src.dao.models import User, Category
 
 URL = setting.DATABASE_URL
-
+# LOCAL_URL = setting.LOCAL_db
 async_engine = create_async_engine(url=URL,echo=True,future=True)
 
 async_session_maker = async_sessionmaker(bind=async_engine, class_=AsyncSession)

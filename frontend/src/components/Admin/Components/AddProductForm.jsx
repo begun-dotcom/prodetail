@@ -22,7 +22,8 @@ const AddProductForm = () => {
   const categories = [
     { value: 'питбайки', label: '🏍️ Питбайки', categoryId: 1},
     { value: 'электровелосипеды', label: '⚡ Электровелосипеды', categoryId: 2},
-    { value: 'запчасти', label: '🔧 Запчасти', categoryId: 3}
+    { value: 'запчасти', label: '🔧 Запчасти', categoryId: 3},
+    
   ];
 
   const handleChange = (e) => {
@@ -175,17 +176,25 @@ const AddProductForm = () => {
         </div>
 
         <div>
-          <label className="block text-gray-300 font-medium mb-2">Описание</label>
-          <textarea
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            required
-            rows="4"
-            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-all resize-none"
-            placeholder="Подробное описание товара..."
-          />
-        </div>
+            <label className="block text-gray-300 font-medium mb-2">
+              Описание 
+              <span className="text-gray-500 text-sm ml-1">({formData.description.length}/400)</span>
+            </label>
+            <textarea
+              name="description"
+              value={formData.description}
+              onChange={(e) => {
+                if (e.target.value.length <= 400) {
+                  handleChange(e);
+                }
+              }}
+              required
+              rows="4"
+              maxLength={400}
+              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-all resize-none"
+              placeholder="Подробное описание товара (макс. 400 символов)..."
+            />
+    </div>
 
         <div className="flex gap-3 pt-2">
           <button

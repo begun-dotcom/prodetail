@@ -26,9 +26,10 @@ function EditProductModal({ product, onClose, onUpdate }) {
         setLoading(true);
         
         const formDataToSend = new FormData();
+        const price = formData.price && formData.price !== '' ? parseFloat(formData.price) : 0;
         formDataToSend.append('name', formData.name);
         formDataToSend.append('description', formData.description);
-        formDataToSend.append('price', formData.price);
+        formDataToSend.append('price', price);
         formDataToSend.append('category_id', formData.category_id);
         
         if (newImage) {
@@ -127,7 +128,7 @@ function EditProductModal({ product, onClose, onUpdate }) {
                             onChange={(e) => setFormData({...formData, price: parseFloat(e.target.value)})}
                             step='0.01'
                             className='w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30 transition-all'
-                            required
+                            
                         />
                     </div>
 
