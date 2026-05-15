@@ -15,12 +15,11 @@ function MainCategory({category}) {
   /* const openImageModal = (imageUrl, productName) => {
       setSelectedImage({ url: imageUrl, name: productName });
   }; */
-  const openImageModal = (imageUrl, productName, description, price) => {
+  const openImageModal = (imageUrl, productName, description) => {
   setSelectedImage({ 
     url: imageUrl, 
     name: productName, 
-    description: description,
-    price: price 
+    description: description
   });
 };
 
@@ -171,7 +170,7 @@ const goToPage = (page) => {
               >
                 <div 
                   className="relative overflow-hidden bg-gray-800/50 aspect-4/3 cursor-zoom-in"
-                  onClick={() => openImageModal(product.image_url, product.name, product.description, product.price)}
+                  onClick={() => openImageModal(product.image_url, product.name, product.description)}
                 >
                   {/* onClick={() => openImageModal(product.image_url, product.name)} */}
                   <img 
@@ -290,55 +289,46 @@ const goToPage = (page) => {
 
       {/* Модалка просмотра изображения */}
       {selectedImage && (
-          <div 
-            className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
-            onClick={closeImageModal}
-          >
             <div 
-              className="relative max-w-4xl w-full animate-scaleIn"
-              onClick={(e) => e.stopPropagation()}
+              className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
+              onClick={closeImageModal}
             >
-              <div className='bg-white/5 border border-white/10 rounded-2xl overflow-hidden flex flex-col max-h-[90vh]'>
-                {/* Фото */}
-                <div className='relative flex-shrink-0'>
-                  <button
-                    onClick={closeImageModal}
-                    className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full z-10 bg-black/30"
-                  >
-                    <X className="w-6 h-6" />
-                  </button>
-                  <img 
-                    src={selectedImage.url} 
-                    alt={selectedImage.name}
-                    className="w-full h-64 md:h-96 object-contain bg-black/50"
-                  />
-                </div>
-                
-                {/* Контент — скроллится */}
-                <div className='p-6 overflow-y-auto flex-1'>
-                  <p className="text-white text-xl font-bold mb-2">
-                    {selectedImage.name}
-                  </p>
+              <div 
+                className="relative max-w-2xl w-full animate-scaleIn"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className='bg-white/5 border border-white/10 rounded-2xl overflow-hidden flex flex-col max-h-[90vh]'>
+                  {/* Фото */}
+                  <div className='relative shrink-0 bg-black/50'>
+                    <button
+                      onClick={closeImageModal}
+                      className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full z-10 bg-black/30"
+                    >
+                      <X className="w-6 h-6" />
+                    </button>
+                    <img 
+                      src={selectedImage.url} 
+                      alt={selectedImage.name}
+                      className="w-full h-auto max-h-[50vh] object-contain mx-auto"
+                    />
+                  </div>
                   
-                  {selectedImage.price > 0 && (
-                    <p className="text-amber-500 text-2xl font-bold mb-4">
-                      {Number(selectedImage.price).toLocaleString()} ₽
+                  {/* Описание — скроллится */}
+                  <div className='p-6 overflow-y-auto flex-1'>
+                    <p className="text-white text-lg font-bold mb-4">
+                      {selectedImage.name}
                     </p>
-                  )}
-                  
-                  {selectedImage.description && (
-                    <div>
-                      <h3 className="text-white/60 text-sm uppercase mb-2">Описание</h3>
-                      <p className="text-gray-300 text-base leading-relaxed whitespace-pre-wrap break-words">
+                    
+                    {selectedImage.description && (
+                      <p className="text-gray-300 text-base leading-relaxed whitespace-pre-wrap wrap-break-word">
                         {selectedImage.description}
                       </p>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-)}
+          )}
       {/* {selectedImage && (
         <div 
           className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
