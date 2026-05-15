@@ -20,11 +20,14 @@ export default defineConfig({
     minify: 'terser',
     rollupOptions: {
       output: {
-        manualChunks: {
-          react: ['react', 'react-dom'],
-          router: ['react-router-dom'],
-          query: ['@tanstack/react-query'],
-          axios: ['axios'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) return 'react';
+            if (id.includes('react-router')) return 'router';
+            if (id.includes('@tanstack')) return 'query';
+            if (id.includes('axios')) return 'axios';
+            return 'vendor';
+          }
         }
       }
     }
