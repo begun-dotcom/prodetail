@@ -12,16 +12,16 @@ function MainCategory({category}) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15;
 
-  /* const openImageModal = (imageUrl, productName) => {
+  const openImageModal = (imageUrl, productName) => {
       setSelectedImage({ url: imageUrl, name: productName });
-  }; */
-  const openImageModal = (imageUrl, productName, description) => {
+  };
+  /* const openImageModal = (imageUrl, productName, description) => {
   setSelectedImage({ 
     url: imageUrl, 
     name: productName, 
     description: description
   });
-};
+}; */
 
   const closeImageModal = () => {
       setSelectedImage(null);
@@ -170,7 +170,7 @@ const goToPage = (page) => {
               >
                 <div 
                   className="relative overflow-hidden bg-gray-800/50 aspect-4/3 cursor-zoom-in"
-                  onClick={() => openImageModal(product.image_url, product.name, product.description)}
+                  onClick={() => openImageModal(product.image_url, product.name)}
                 >
                   {/* onClick={() => openImageModal(product.image_url, product.name)} */}
                   <img 
@@ -288,7 +288,7 @@ const goToPage = (page) => {
       </Container>
 
       {/* Модалка просмотра изображения */}
-      {selectedImage && (
+      {/* {selectedImage && (
             <div 
               className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
               onClick={closeImageModal}
@@ -298,7 +298,7 @@ const goToPage = (page) => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className='bg-white/5 border border-white/10 rounded-2xl overflow-hidden flex flex-col max-h-[90vh]'>
-                  {/* Фото */}
+                  
                   <div className='relative shrink-0 bg-black/50'>
                     <button
                       onClick={closeImageModal}
@@ -313,7 +313,7 @@ const goToPage = (page) => {
                     />
                   </div>
                   
-                  {/* Описание — скроллится */}
+                  
                   <div className='p-6 overflow-y-auto flex-1'>
                     <p className="text-white text-lg font-bold mb-4">
                       {selectedImage.name}
@@ -328,8 +328,8 @@ const goToPage = (page) => {
                 </div>
               </div>
             </div>
-          )}
-      {/* {selectedImage && (
+          )} */}
+      {selectedImage && (
         <div 
           className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
           onClick={closeImageModal}
@@ -359,7 +359,7 @@ const goToPage = (page) => {
             </div>
           </div>
         </div>
-      )} */}
+      )}
     </div>
   )
 }
