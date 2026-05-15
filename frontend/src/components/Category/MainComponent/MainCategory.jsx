@@ -171,6 +171,8 @@ const goToPage = (page) => {
                     alt={product.name}
                     onError={(e) => { e.target.src = '/notfound.jpg'; }}
                     loading="lazy"
+                    width="1920"
+                    height="1080"
                   />
                   
                   {/* Оверлей при наведении */}
