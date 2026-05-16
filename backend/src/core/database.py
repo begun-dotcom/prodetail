@@ -45,7 +45,7 @@ async def create_admin_if_not_exists():
 
 async def create_categories_if_not_exists():
     try:
-        categories = ["Питбайки", "Электровелосипеды", "Запчасти"]
+        categories = ["moto", "electro", "spare","quadro", "computer", "service"]
         async with async_session_maker() as session:
             for cat_name in categories:
                 result = await session.execute(

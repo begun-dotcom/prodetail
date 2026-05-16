@@ -18,55 +18,99 @@ function MainHome() {
   </div>
 
   {/* Три фото */}
-  <div className='w-full grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-4 md:gap-5 pb-8 md:pb-10'>
-    
-    {/* Запчасти */}
-    
+  <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 pb-8 md:pb-10'>
+  
+  {/* Запчасти */}
+        <Link to="/category/spare" className='relative group overflow-hidden rounded-2xl border border-white/5 hover:border-amber-500/20 transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/5 cursor-pointer'>
+          <img 
+            className='w-full h-48 md:h-56 lg:h-70 object-cover transition-transform duration-700 group-hover:scale-105' 
+            src='/запчасти.webp' 
+            alt='Запчасти'
+          />
+          <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent' />
+          <div className='absolute inset-0 bg-linear-to-t from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+          <div className='absolute bottom-0 left-0 right-0 p-4 md:p-5'>
+            <h3 className='text-white font-semibold text-lg md:text-xl'>Автозапчасти</h3>
+            <p className='text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Для мотоциклов и авто</p>
+          </div>
+        </Link>
 
-    {/* Питбайки */}
-    <Link to="/category/Питбайки" className='relative group overflow-hidden rounded-2xl border border-white/5 hover:border-amber-500/20 transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/5 cursor-pointer'>
-      <img 
-        className='w-full h-48 md:h-56 lg:h-70 object-cover transition-transform duration-700 group-hover:scale-105' 
-        src='/mot.jpg' 
-        alt='Питбайки'
-      />
-      <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent' />
-      <div className='absolute inset-0 bg-linear-to-t from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
-      <div className='absolute bottom-0 left-0 right-0 p-4 md:p-5'>
-        <h3 className='text-white font-semibold text-lg md:text-xl'>Питбайки</h3>
-        <p className='text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Мотоциклы и запчасти</p>
-      </div>
-    </Link>
+        {/* Питбайки */}
+        <Link to="/category/moto" className='relative group overflow-hidden rounded-2xl border border-white/5 hover:border-amber-500/20 transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/5 cursor-pointer'>
+          <img 
+            className='w-full h-48 md:h-56 lg:h-70 object-cover transition-transform duration-700 group-hover:scale-105' 
+            src='/mot.jpg' 
+            alt='Питбайки'
+          />
+          <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent' />
+          <div className='absolute inset-0 bg-linear-to-t from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+          <div className='absolute bottom-0 left-0 right-0 p-4 md:p-5'>
+            <h3 className='text-white font-semibold text-lg md:text-xl'>Мототехника</h3>
+            <p className='text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Мотоциклы и запчасти</p>
+          </div>
+        </Link>
 
-    {/* Электровелосипеды */}
-    <Link to="/category/Электровелосипеды" className='relative group overflow-hidden rounded-2xl border border-white/5 hover:border-amber-500/20 transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/5 cursor-pointer'>
-      <img 
-        className='w-full h-48 md:h-56 lg:h-70 object-cover transition-transform duration-700 group-hover:scale-105' 
-        src='/mot2.jpg' 
-        alt='Электровелосипеды'
-      />
-      <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent' />
-      <div className='absolute inset-0 bg-linear-to-t from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
-      <div className='absolute bottom-0 left-0 right-0 p-4 md:p-5'>
-        <h3 className='text-white font-semibold text-lg md:text-xl'>Электровелосипеды</h3>
-        <p className='text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>В наличии и под заказ</p>
-      </div>
-    </Link>
-    <Link to="/category/Запчасти" className='relative group overflow-hidden rounded-2xl border border-white/5 hover:border-amber-500/20 transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/5 cursor-pointer'>
-      <img 
-        className='w-full h-48 md:h-56 lg:h-70 object-cover transition-transform duration-700 group-hover:scale-105' 
-        src='/запчасти.webp' 
-        alt='Запчасти'
-      />
-      <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent' />
-      <div className='absolute inset-0 bg-linear-to-t from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
-      <div className='absolute bottom-0 left-0 right-0 p-4 md:p-5'>
-        <h3 className='text-white font-semibold text-lg md:text-xl'>Запчасти</h3>
-        <p className='text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Для мотоциклов и авто</p>
-      </div>
-    </Link>
+        {/* Электротехника */}
+        <Link to="/category/electro" className='relative group overflow-hidden rounded-2xl border border-white/5 hover:border-amber-500/20 transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/5 cursor-pointer'>
+          <img 
+            className='w-full h-48 md:h-56 lg:h-70 object-cover transition-transform duration-700 group-hover:scale-105' 
+            src='/mot2.jpg' 
+            alt='Электротехника'
+          />
+          <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent' />
+          <div className='absolute inset-0 bg-linear-to-t from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+          <div className='absolute bottom-0 left-0 right-0 p-4 md:p-5'>
+            <h3 className='text-white font-semibold text-lg md:text-xl'>Электротехника</h3>
+            <p className='text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Электрооборудование</p>
+          </div>
+        </Link>
+
+        {/* Квадроциклы */}
+        <Link to="/category/quadro" className='relative group overflow-hidden rounded-2xl border border-white/5 hover:border-amber-500/20 transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/5 cursor-pointer'>
+          <img 
+            className='w-full h-48 md:h-56 lg:h-70 object-cover transition-transform duration-700 group-hover:scale-105' 
+            src='/quadro.jpg' 
+            alt='Квадроциклы'
+          />
+          <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent' />
+          <div className='absolute inset-0 bg-linear-to-t from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+          <div className='absolute bottom-0 left-0 right-0 p-4 md:p-5'>
+            <h3 className='text-white font-semibold text-lg md:text-xl'>Квадроциклы</h3>
+            <p className='text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Запчасти и аксессуары</p>
+          </div>
+        </Link>
+
+        {/* Компьютеры */}
+        <Link to="/category/computer" className='relative group overflow-hidden rounded-2xl border border-white/5 hover:border-amber-500/20 transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/5 cursor-pointer'>
+          <img 
+            className='w-full h-48 md:h-56 lg:h-70 object-cover transition-transform duration-700 group-hover:scale-105' 
+            src='/comp.jpg' 
+            alt='Компьютеры'
+          />
+          <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent' />
+          <div className='absolute inset-0 bg-linear-to-t from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+          <div className='absolute bottom-0 left-0 right-0 p-4 md:p-5'>
+            <h3 className='text-white font-semibold text-lg md:text-xl'>Компьютеры</h3>
+            <p className='text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Комплектующие и ремонт</p>
+          </div>
+        </Link>
+        {/* Автосервис */}
+        <Link to="/category/service" className='relative group overflow-hidden rounded-2xl border border-white/5 hover:border-amber-500/20 transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/5 cursor-pointer'>
+          <img 
+            className='w-full h-48 md:h-56 lg:h-70 object-cover transition-transform duration-700 group-hover:scale-105' 
+            src='/service.jpg' 
+            alt='Автосервис'
+          />
+          <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent' />
+          <div className='absolute inset-0 bg-linear-to-t from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+          <div className='absolute bottom-0 left-0 right-0 p-4 md:p-5'>
+            <h3 className='text-white font-semibold text-lg md:text-xl'>Автосервис</h3>
+            <p className='text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Ремонт и обслуживание</p>
+          </div>
+        </Link>
+  
   </div>
-</div>
+  </div>
 
         {/* Три преимущества */}
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 pb-8 md:pb-10'>

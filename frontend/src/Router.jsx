@@ -7,6 +7,7 @@ import Admin from './components/Admin/Admin'
 import ProtectedRoute from './components/Login/ProtectedRoute'
 import Login from './components/Login/Login'
 import AboutPage from './components/About/AboutPage'
+import Payments from './components/Payments/Payments'
 import NotFound from './components/NotFound/NotFound';
 
 
@@ -40,6 +41,7 @@ function AppRoutes() {
           <Admin/>
         </ProtectedRoute>
       } />
+      <Route path="/payments" element={<Payments />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )

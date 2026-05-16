@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, computed_field
 
 
 class TokenResponse(BaseModel):
@@ -68,3 +68,21 @@ class AddProduct(BaseModel):
     image_url : str
 
 
+CATEGORY_NAMES = {
+    "moto": "Мототехника",
+    "electro": "Электротехника",
+    "spare": "Автозапчасти",
+    "quadro": "Квадроциклы",
+    "computer": "Компьютеры",
+    "service": "Автосервис",
+}
+
+
+class CategoryOut(BaseModel):
+    id: int
+    name: str
+
+    @computed_field
+    @property
+    def display_name(self) -> str:
+        return CATEGORY_NAMES.get(self.name, self.name)

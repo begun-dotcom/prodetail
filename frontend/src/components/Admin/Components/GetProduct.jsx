@@ -5,7 +5,7 @@ import EditProductModal from './EditProductModal'
 
 
 function GetProduct() {
-  const [activeTab, setActiveTab] = useState('Питбайки');
+  const [activeTab, setActiveTab] = useState('moto');
   const [error, setError] = useState('');
   const queryClient = useQueryClient();
   const [editingProduct, setEditingProduct] = useState(null);
@@ -81,7 +81,7 @@ function GetProduct() {
                 : 'bg-white/5 text-white/60 hover:text-white hover:bg-white/10 border border-white/10'
             }`}
           >
-            {cat.name}
+            {cat.display_name}
           </button>
         ))}
       </div>

@@ -41,10 +41,18 @@ function NavComponent() {
         </Link>
         
         <Link 
-          to="/category/Питбайки" 
+          to="/category/moto" 
           className="relative px-4 py-2 text-white/95 hover:text-white transition-all duration-300 font-medium text-lg lg:text-xl rounded-xl hover:bg-white/5 group"
         >
           Каталог
+          <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-amber-500 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+        </Link>
+
+        <Link 
+          to="/payments" 
+          className="relative px-4 py-2 text-white/95 hover:text-white transition-all duration-300 font-medium text-lg lg:text-xl rounded-xl hover:bg-white/5 group"
+        >
+          Оплата и доставка
           <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-amber-500 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
         </Link>
         
@@ -104,7 +112,7 @@ function NavComponent() {
         </Link>
         
         <Link 
-          to="/category/Питбайки" 
+          to="/category/moto" 
           onClick={closeMenu}
           className="block px-6 py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors"
         >
@@ -113,27 +121,52 @@ function NavComponent() {
         
         {/* Подкатегории — компактнее */}
         <Link 
-          to="/category/Питбайки" 
+          to="/category/spare" 
           onClick={closeMenu}
           className="block pl-10 pr-6 py-2.5 border-b border-gray-50 hover:bg-gray-50 transition-colors"
         >
-          <span className="text-sm text-gray-600">Питбайки</span>
+          <span className="text-sm text-gray-600">Автозапчасти</span>
+        </Link>
+
+        <Link 
+          to="/category/moto" 
+          onClick={closeMenu}
+          className="block pl-10 pr-6 py-2.5 border-b border-gray-50 hover:bg-gray-50 transition-colors"
+        >
+          <span className="text-sm text-gray-600">Мототехника</span>
         </Link>
         
         <Link 
-          to="/category/Электровелосипеды" 
+          to="/category/electro" 
           onClick={closeMenu}
           className="block pl-10 pr-6 py-2.5 border-b border-gray-50 hover:bg-gray-50 transition-colors"
         >
-          <span className="text-sm text-gray-600">Электровелосипеды</span>
+          <span className="text-sm text-gray-600">Электротехника</span>
+        </Link>
+        
+        
+        <Link 
+          to="/category/quadro" 
+          onClick={closeMenu}
+          className="block pl-10 pr-6 py-2.5 border-b border-gray-50 hover:bg-gray-50 transition-colors"
+        >
+          <span className="text-sm text-gray-600">Квадроциклы</span>
         </Link>
         
         <Link 
-          to="/category/Запчасти" 
+          to="/category/computer" 
           onClick={closeMenu}
           className="block pl-10 pr-6 py-2.5 border-b border-gray-50 hover:bg-gray-50 transition-colors"
         >
-          <span className="text-sm text-gray-600">Запчасти</span>
+          <span className="text-sm text-gray-600">Компьютеры</span>
+        </Link>
+        
+        <Link 
+          to="/category/service" 
+          onClick={closeMenu}
+          className="block pl-10 pr-6 py-2.5 border-b border-gray-50 hover:bg-gray-50 transition-colors"
+        >
+          <span className="text-sm text-gray-600">Автосервис</span>
         </Link>
         
         <Link 

@@ -12,7 +12,7 @@ const AddProductForm = () => {
     name: '',
     description: '',
     price: '',
-    category: 'питбайки',
+    category: 'moto',
   });
   
   const [imageFile, setImageFile] = useState(null);
@@ -20,11 +20,15 @@ const AddProductForm = () => {
   const [loading, setLoading] = useState(false);
 
   const categories = [
-    { value: 'питбайки', label: '🏍️ Питбайки', categoryId: 1},
-    { value: 'электровелосипеды', label: '⚡ Электровелосипеды', categoryId: 2},
-    { value: 'запчасти', label: '🔧 Запчасти', categoryId: 3},
-    
+    { value: 'moto', label: '🏍️ Мототехника', categoryId: 1},
+    { value: 'electro', label: '⚡ Электротехника', categoryId: 2},
+    { value: 'spare', label: '🔧 Автозапчасти', categoryId: 3},
+    { value: 'quadro', label: '🏍️ Квадроциклы', categoryId: 4},
+    { value: 'computer', label: '⚡ Компьютеры', categoryId: 5},
+    { value: 'service', label: '🔧 Автосервис', categoryId: 6}
   ];
+
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -97,6 +101,8 @@ const AddProductForm = () => {
       setLoading(false);
     }
   };
+
+  
 
   return (
     <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10">
@@ -207,7 +213,7 @@ const AddProductForm = () => {
           <button
             type="button"
             onClick={() => {
-              setFormData({ name: '', description: '', price: '', category: 'мотоциклы' });
+              setFormData({ name: '', description: '', price: '', category: 'Мототехника' });
               removeImage();
             }}
             className="px-6 bg-white/5 border border-white/10 text-gray-300 hover:text-white rounded-xl hover:bg-white/10 transition-all duration-300"

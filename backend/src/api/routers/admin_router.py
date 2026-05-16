@@ -3,7 +3,7 @@ from typing import List, Optional
 from starlette import status
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Form
 from src.api.routers.schemas import TokenResponse, LoginRequest, AdminLogin, AddProduct, CategorySchemas, \
-    CategoryNameSchemas, ProductResponse
+    CategoryNameSchemas, ProductResponse, CategoryOut
 from src.api.routers.utils import get_current_user, create_access_token
 from src.api.servicesS3.services import ImageService
 from src.core.database import SessionDep
@@ -86,8 +86,7 @@ async def add_product(session : SessionDep, name: str = Form(...), description: 
             detail=f"Ошибка сервера: {str(e)}"
         )
 
-
-@admin_router.get("/admin/category", response_model=List[CategorySchemas])
+@admin_router.get("/admin/category", response_model=list[CategoryOut])
 async def get_category(session : SessionDep):
     try:
         category = await CategoryDao(session=session).get_all()
@@ -169,3 +168,5 @@ async def update_product(
         raise
     except Exception as e:
         raise HTTPException(500, f"Ошибка обновления: {str(e)}")
+
+

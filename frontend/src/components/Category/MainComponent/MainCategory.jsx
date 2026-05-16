@@ -8,6 +8,7 @@ import { Search, ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
 function MainCategory({category}) {
 
   const [activCategiry, setActivCategiry] = useState(category);
+  
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15;
@@ -111,7 +112,7 @@ const goToPage = (page) => {
             >
               {categories.map(cat => (
                 <option key={cat.id} value={cat.name} className='text-gray-900'>
-                  {cat.name}
+                  {cat.display_name}
                 </option>
               ))}
             </select>
@@ -135,7 +136,7 @@ const goToPage = (page) => {
                     }
                   `}
                 >
-                  {cat.name}
+                  {cat.display_name}
                 </button>
               ))}
             </div>
@@ -297,10 +298,10 @@ const goToPage = (page) => {
             
             <div className='bg-white/5 border border-white/10 rounded-2xl overflow-hidden'>
               <img 
-                src={selectedImage.url} 
-                alt={selectedImage.name}
-                className="w-full h-full object-contain max-h-[80vh]"
-              />
+                    src={selectedImage.url || '/notfound.jpg'} 
+                    alt={selectedImage.name}
+                    className="w-full h-auto max-h-[50vh] object-contain mx-auto"
+                  />
               <div className='p-4 border-t border-white/10'>
                 <p className="text-white text-lg font-medium text-center">
                   {selectedImage.name}
