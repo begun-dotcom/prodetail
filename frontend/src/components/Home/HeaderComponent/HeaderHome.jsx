@@ -9,8 +9,8 @@ function HeaderHome() {
       <NavComponent/>
         <div className='w-full mt-0 md:mt-16 '>
           <Container className='relative z-10 px-0.5 pt-1 pb-4 md:pt-1 md:pb-6'>
-            <div className='relative w-full h-50 md:h-150 rounded-2xl overflow-hidden border border-white/5 shadow-2xl shadow-black/20'>
-              {/* {<img 
+            <div className='relative w-full rounded-2xl overflow-hidden border border-white/5 shadow-2xl shadow-black/20'>
+              {<img 
                   className='w-full h-auto object-cover' 
                   src='/screen.jpg' 
                   alt='screen'
@@ -19,7 +19,7 @@ function HeaderHome() {
                   loading="eager"
                   fetchpriority="high"
                   style={{ aspectRatio: '2400/1800', minHeight: '400px' }}
-                />} */}
+                />}
               
               {/* Затемнение сверху */}
               <div className='absolute inset-0 bg-linear-to-b from-[#18202a]/30 via-transparent to-[#18202a]/30 z-10'></div>
@@ -40,7 +40,7 @@ function HeaderHome() {
                 </div>
 
                 {/* Категории */}
-                <div className="hidden md:block md:w-full md:max-w-250 md:mx-auto md:px-10">
+                <div className="w-full max-w-250 mx-auto px-4 md:px-10">
                   <div className="flex justify-center md:justify-between gap-6 md:gap-8 lg:gap-12">
                     
                     {/* Категория 1 - Мотоциклы */}
