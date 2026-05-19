@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Container from './Container'
 import { FiMenu, FiX  } from 'react-icons/fi';
+import { CreditCard, Banknote, Wallet, QrCode, Receipt } from 'lucide-react';
 
 function NavComponent() {
   const [isOpen, setIsOpen] = useState(false);
@@ -167,6 +168,19 @@ function NavComponent() {
           className="block pl-10 pr-6 py-2.5 border-b border-gray-50 hover:bg-gray-50 transition-colors"
         >
           <span className="text-sm text-gray-600">Автосервис</span>
+        </Link>
+
+        <Link 
+          to="/payments" 
+          onClick={closeMenu}
+          className="block px-6 py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors"
+        >
+          <span className="flex items-center gap-2 text-lg font-medium text-gray-800">
+                  <CreditCard className='w-5 h-5 text-amber-500' />
+                  Оплата и доставка
+          </span>
+          
+          
         </Link>
         
         <Link 

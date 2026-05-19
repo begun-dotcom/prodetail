@@ -87,7 +87,7 @@ function HeaderHome() {
                                 <div className="w-22 h-22 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:shadow-xl group-hover:shadow-amber-500/20 group-hover:bg-white/15 group-hover:border-amber-500/30">
                                   <img 
                                     className='w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 object-contain transition-transform duration-300 group-hover:scale-110 drop-shadow-lg' 
-                                    src='/velo.png' 
+                                    src='/velo_ico.png' 
                                     alt='bike'
                                   />
                                 </div>
@@ -111,7 +111,7 @@ function HeaderHome() {
                                 <div className="w-22 h-22 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:shadow-xl group-hover:shadow-amber-500/20 group-hover:bg-white/15 group-hover:border-amber-500/30">
                                   <img 
                                     className='w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 object-contain transition-transform duration-300 group-hover:scale-110 drop-shadow-lg' 
-                                    src='/velo.png' 
+                                    src='/quatro.webp' 
                                     alt='quadro'
                                   />
                                 </div>
@@ -127,7 +127,7 @@ function HeaderHome() {
                                 <div className="w-22 h-22 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:shadow-xl group-hover:shadow-amber-500/20 group-hover:bg-white/15 group-hover:border-amber-500/30">
                                   <img 
                                     className='w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 object-contain transition-transform duration-300 group-hover:scale-110 drop-shadow-lg' 
-                                    src='/velo.png' 
+                                    src='/comp.webp' 
                                     alt='computer'
                                   />
                                 </div>
@@ -144,7 +144,7 @@ function HeaderHome() {
                                 <div className="w-22 h-22 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:shadow-xl group-hover:shadow-amber-500/20 group-hover:bg-white/15 group-hover:border-amber-500/30">
                                   <img 
                                     className='w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 object-contain transition-transform duration-300 group-hover:scale-110 drop-shadow-lg' 
-                                    src='/velo.png' 
+                                    src='/service_ico.png' 
                                     alt='service'
                                   />
                                 </div>

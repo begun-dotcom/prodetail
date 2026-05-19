@@ -122,7 +122,8 @@ function PaymentsMain() {
             </a>
             <div className='flex items-center gap-2 text-gray-300'>
               <MapPin className='w-5 h-5 text-amber-500' />
-              <span>с. Первомайское, пер. Стадионный 6-2а</span>
+              <span>636930, Томская область, Первомайский район, <br />
+                    село Первомайское, переулок Стадионный 6-2а</span>
             </div>
           </div>
         </div>

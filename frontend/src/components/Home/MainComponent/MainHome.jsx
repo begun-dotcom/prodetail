@@ -61,7 +61,7 @@ function MainHome() {
           <div className='absolute inset-0 bg-linear-to-t from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
           <div className='absolute bottom-0 left-0 right-0 p-4 md:p-5'>
             <h3 className='text-white font-semibold text-lg md:text-xl'>Электротехника</h3>
-            <p className='text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Электрооборудование</p>
+            <p className='text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Электротехника</p>
           </div>
         </Link>
 
@@ -98,7 +98,7 @@ function MainHome() {
         <Link to="/category/service" className='relative group overflow-hidden rounded-2xl border border-white/5 hover:border-amber-500/20 transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/5 cursor-pointer'>
           <img 
             className='w-full h-48 md:h-56 lg:h-70 object-cover transition-transform duration-700 group-hover:scale-105' 
-            src='/service.jpg' 
+            src='/service_main.webp' 
             alt='Автосервис'
           />
           <div className='absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent' />

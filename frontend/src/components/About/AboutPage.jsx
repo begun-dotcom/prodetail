@@ -93,7 +93,7 @@ function AboutPage() {
                 <div>
                   <h3 className='text-lg font-semibold text-white mb-1'>Адрес</h3>
                   <p className='text-gray-400 leading-relaxed'>
-                    Томская область, Первомайский район,<br />
+                    636930, Томская область, Первомайский район,<br />
                     село Первомайское,<br />
                     переулок Стадионный 6-2а
                   </p>

@@ -7,6 +7,15 @@ import { Search, ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
 
 function MainCategory({category}) {
 
+  const CATEGORY_NAMES = {
+  "moto": "Мототехника",
+  "electro": "Электротехника",
+  "spare": "Автозапчасти",
+  "quadro": "Квадроциклы",
+  "computer": "Компьютеры",
+  "service": "Автосервис",
+};
+
   const [activCategiry, setActivCategiry] = useState(category);
   
   const [selectedImage, setSelectedImage] = useState(null);
@@ -146,10 +155,10 @@ const goToPage = (page) => {
         {/* Заголовок категории */}
         <div className='mb-6 mt-4 md:mt-0'>
           <h2 className='text-2xl md:text-3xl font-bold text-white'>
-            {activCategiry}
-            <span className='text-white/40 text-lg ml-2 font-normal'>
-              ({products.length} товаров)
-            </span>
+              {CATEGORY_NAMES[activCategiry] || activCategiry}
+              <span className='text-white/40 text-lg ml-2 font-normal'>
+                ({products.length} товаров)
+              </span>
           </h2>
         </div>
 
@@ -166,7 +175,6 @@ const goToPage = (page) => {
                   className="relative overflow-hidden bg-gray-800/50 aspect-4/3 cursor-zoom-in"
                   onClick={() => openImageModal(product.image_url, product.name, product.description)}
                 >
-                  {/* onClick={() => openImageModal(product.image_url, product.name)} */}
                   <img 
                     className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110' 
                     src={product.image_url && product.image_url !== '' ? product.image_url : '/notfound.jpg'} 
@@ -190,7 +198,7 @@ const goToPage = (page) => {
                   <h3 className="text-sm md:text-base font-semibold text-white line-clamp-1 group-hover:text-amber-400 transition-colors">
                     {product.name}
                   </h3>
-                  <p className="text-xs md:text-sm text-gray-400 mt-1.5 line-clamp-2 min-h-10">
+                  <p className="text-xs md:text-sm text-gray-400 mt-1.5 line-clamp-2 min-h-9">
                       {product.description}
                   </p>
                   <div className="mt-4 flex items-center justify-between">
@@ -306,7 +314,7 @@ const goToPage = (page) => {
                 <p className="text-white text-lg font-medium text-center">
                   {selectedImage.name}
                 </p>
-                <p className="text-gray-300 text-base leading-relaxed whitespace-pre-wrap wrap-break-word">
+                <p className="text-gray-300 text-base leading-relaxed whitespace-pre-wrap wrap-break-word max-h-40 overflow-y-auto">
                         {selectedImage.description}
                  </p>
               </div>

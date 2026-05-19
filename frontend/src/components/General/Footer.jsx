@@ -27,7 +27,7 @@ function Footer() {
                             <div className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
                                 <span className="text-sm">
-                                    Томская область, Первомайский район, <br />
+                                    636930, Томская область, Первомайский район, <br />
                                     село Первомайское, переулок Стадионный 6-2а
                                 </span>
                             </div>
